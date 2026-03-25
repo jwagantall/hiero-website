@@ -178,8 +178,8 @@ jobs:
             --title "Add release post for ${{ steps.release.outputs.repo }} ${{ steps.release.outputs.tag }}" \
             --body "This PR was automatically generated from the GitHub release:
 
-${{ github.event.inputs.release_url }}
+          ${{ github.event.inputs.release_url }}
 
-It creates a new blog post using the release notes from the upstream release." \
+          It creates a new blog post using the release notes from the upstream release." \
             --base main \
             --head "${{ steps.branch.outputs.branch }}"
