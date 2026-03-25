@@ -113,34 +113,34 @@ jobs:
           dt = dt.astimezone(timezone.utc)
 
           content = f'''+++
-title = "{title}"
-date = {dt.strftime("%Y-%m-%dT%H:%M:%S+00:00")}
-categories = ["Blog"]
-abstract = "{abstract}"
-[[authors]]
-name = "{author_login}"
-organization = "Hiero Team"
-+++
+          title = "{title}"
+          date = {dt.strftime("%Y-%m-%dT%H:%M:%S+00:00")}
+          categories = ["Blog"]
+          abstract = "{abstract}"
+          [[authors]]
+          name = "{author_login}"
+          organization = "Hiero Team"
+          +++
 
-We’re excited to share a new release for **{repo}**.
+          We’re excited to share a new release for **{repo}**.
 
-* * *
+          * * *
 
-## Latest Release: {release_name}
+          ## Latest Release: {release_name}
 
-- **Repository:** `{owner}/{repo}`
-- **Version:** `{tag}`
-- **Published:** {dt.strftime("%B %d, %Y")}
-- **Release URL:** [{html_url}]({html_url})
+          - **Repository:** `{owner}/{repo}`
+          - **Version:** `{tag}`
+          - **Published:** {dt.strftime("%B %d, %Y")}
+          - **Release URL:** [{html_url}]({html_url})
 
-## Release Notes
+          ## Release Notes
 
-{body if body.strip() else "No release notes were provided in the GitHub release."}
+          {body if body.strip() else "No release notes were provided in the GitHub release."}
 
-* * *
+          * * *
 
-For the complete details, see the original GitHub release: [{release_name}]({html_url})
-'''
+          For the complete details, see the original GitHub release: [{release_name}]({html_url})
+          '''
 
           os.makedirs(os.path.dirname(filepath), exist_ok=True)
           with open(filepath, "w", encoding="utf-8") as f:
